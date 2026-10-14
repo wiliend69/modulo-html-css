@@ -1,0 +1,4 @@
+*Nombre: Marta Diaz
+*Empresa: Panaderia Aurora
+*estado: Inactivo
+*correo: marta@example.com

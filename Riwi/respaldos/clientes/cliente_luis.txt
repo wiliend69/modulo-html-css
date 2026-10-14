@@ -1,0 +1,4 @@
+*Nombre: Luis Torres
+*Empresa: Panaderia Aurora
+*Estado: Activo
+*Correo: luis@example.com
