@@ -1,0 +1,1 @@
+PISTA 4: El mensaje importante esta al FINAL del archivo mas largo de esta carpeta. Usa ls -l para encontrarlo y tail para leer el final.

@@ -1,0 +1,26 @@
+PAQUETE RESCATE EN NOVATECH - EQUIPO SONNET
+============================================
+
+1) Descomprimir en la carpeta personal (desde Descargas):
+     cd ~/Downloads
+     unzip mision_novatech.zip -d ~
+   Si unzip no esta instalado:
+     python3 -m zipfile -e mision_novatech.zip ~
+
+2) Revisar que quedo todo:
+     cd ~
+     ls
+   Deben aparecer: novatech, verificar.sh, preparar_mision.sh, completar_mision.sh, crear_reto.sh
+
+3) Verificar (debe dar 0 de 14 al inicio):
+     bash ~/verificar.sh
+
+4) Misiones 1 a 5 ya resueltas (bitacora, respaldo, proyecto, limpieza):
+     bash ~/completar_mision.sh
+     bash ~/verificar.sh        (debe dar 14 de 14)
+
+5) Mision 6 (reto propio, palabra clave SONETO7):
+     bash ~/crear_reto.sh
+     cat ~/reto_sonnet/INICIO.txt
+
+NOTA: no ejecuten preparar_mision.sh si ya descomprimieron el zip (novatech ya existe).

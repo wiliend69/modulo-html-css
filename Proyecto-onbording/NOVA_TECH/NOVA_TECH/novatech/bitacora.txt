@@ -1,0 +1,11 @@
+Equipo Sonnet: Danilo Tangarife, Wilmer Camargo, Emanuel Silva
+La ruta absoluta de la carpera novatech es: /home/cohorte8/novatech
+Dentro de novatech hay 3 carpetas: archivo_muerto, correo, servidor_viejo
+Dentro de novatech hay 5 archivos .tmp
+El archivo notas_dev.txt dice exactamente lo siguiente: Recordatorio: el cliente queria algo con cafe... o era te?
+Mision 2 - Nombre del cliente: Cafe Montana
+La ruta absoluta donde encontramos el pedido fue: /home/cohorte8/novatech/correo/bandeja/mensaje_007.txt
+La palabra clave es: ESPRESSO
+Requisitos del cliente: Crear cafe-montana, dejar un index.html, poner el contacto, nosotros y un nuevo menu en pages. Debe tener estilos con CSS, scripts en JS, imagenes en assets/img, audios en assets/audio, los PDF deben ir en docs, el codigo principal debe llamarse app.js y el banner es banner.jpg. No puede haber ningun archivo .tmp o .log. Necesita un README.md con el nombre de nuestro equipo y un .gitignore
+Mision 3: Respaldo: La opcion -r lo que hace es copiar las carpetas y su contenido, sin -r cp no puede copiar un directorio. EL respaldo tambien conserva archivos ocultos como .pista1.txt
+Mision 5 - Archivos temporales y logs eliminados; copia_vieja y servidor_viejo retirados tras revisar respaldo. README.md y .gitignore creados.

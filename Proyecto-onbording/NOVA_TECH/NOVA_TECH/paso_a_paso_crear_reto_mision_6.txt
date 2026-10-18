@@ -1,0 +1,89 @@
+GUIA 2 - MISION 6: LABERINTO DEL EQUIPO SONNET (UBUNTU BASH)
+============================================================
+OBJETIVO: Crear manualmente el reto en ~/reto_sonnet usando solo la terminal.
+Se cambiaron nombres de carpetas y archivos para que no revelen que pista es correcta.
+NO compartas esta guia con el equipo que resolvera el laberinto.
+Ejecuta cada comando por separado. Los nombres son deliberadamente neutros.
+
+PASO 1 - Comprobar que el reto no existe
+---------------------------------------
+cd ~
+pwd
+ls -ld ~/reto_sonnet 2>/dev/null || echo 'Listo para crear el reto'
+Si ya existe, NO repitas la creacion; consulta con tu equipo.
+
+PASO 2 - Crear cuatro niveles y una rama secundaria
+---------------------------------------------------
+mkdir -p ~/reto_sonnet/nodo_k47/sector_2b/archivo_64/modulo_9c
+mkdir -p ~/reto_sonnet/nodo_k47/sector_2b/deposito_3f
+find ~/reto_sonnet -type d
+
+PASO 3 - Instruccion inicial visible
+------------------------------------
+echo 'Sonnet / protocolo 47. Inicia en nodo_k47. Los nombres de archivos no indican su utilidad. Revisa tambien entradas que ls no muestra normalmente.' > ~/reto_sonnet/INICIO.txt
+
+PASO 4 - Primera pista oculta, dentro del primer nivel
+------------------------------------------------------
+echo 'Registro 8M2: continua por sector_2b y luego archivo_64. Hay dos registros en esa carpeta; el que contiene una referencia a modulo_9c permite avanzar. No asumas que un nombre sugiere la respuesta.' > ~/reto_sonnet/nodo_k47/.r8m2
+
+PASO 5 - Distractores (uno oculto y uno visible)
+-----------------------------------------------
+echo 'Canal Z17: el indice de salida se almacena en la carpeta deposito_3f. Revisa alli primero.' > ~/reto_sonnet/nodo_k47/sector_2b/.z17
+echo 'Canal N03: los datos concluyen en deposito_3f. No hace falta seguir mas niveles.' > ~/reto_sonnet/nodo_k47/sector_2b/archivo_64/n03.dat
+
+PASO 6 - Tercera pista (nombre neutro)
+-------------------------------------
+echo 'Registro M41: el siguiente indice esta en modulo_9c. Busca una entrada que no aparece en un listado normal.' > ~/reto_sonnet/nodo_k47/sector_2b/archivo_64/m41.dat
+
+PASO 7 - Segunda pista oculta
+-----------------------------
+echo 'Registro Q26: compara los tamanos de los archivos de este directorio. La instruccion decisiva esta en la ULTIMA linea del archivo de mayor numero de lineas. Usa wc -l y tail.' > ~/reto_sonnet/nodo_k47/sector_2b/archivo_64/modulo_9c/.q26
+
+PASO 8 - Otros archivos neutros y distractor adicional
+------------------------------------------------------
+echo 'Referencia B10: una comprobacion alternativa apunta a deposito_3f.' > ~/reto_sonnet/nodo_k47/sector_2b/archivo_64/modulo_9c/b10.dat
+echo 'Registro de control: estado sin novedades.' > ~/reto_sonnet/nodo_k47/sector_2b/archivo_64/modulo_9c/c52.dat
+echo 'Indice 3F: acceso pendiente. No hay palabra de cierre en este nodo.' > ~/reto_sonnet/nodo_k47/sector_2b/deposito_3f/a14.dat
+
+PASO 9 - Crear archivo de 301 lineas (300 de relleno y la ultima decisiva)
+-------------------------------------------------------------------------
+for i in $(seq 1 300); do echo "Registro $i: sincronizacion completada, checksum estable, sin alertas." >> ~/reto_sonnet/nodo_k47/sector_2b/archivo_64/modulo_9c/registro_64.dat; done
+echo 'INSTRUCCION FINAL: abre nodo_k47/sector_2b/deposito_3f/x91.dat y sigue la instruccion de entrega.' >> ~/reto_sonnet/nodo_k47/sector_2b/archivo_64/modulo_9c/registro_64.dat
+
+PASO 10 - Crear tesoro con palabra clave
+----------------------------------------
+echo 'Acceso confirmado. PALABRA CLAVE: SONETO7. Escribe esa palabra y el nombre de tu equipo en un archivo resuelto.txt en la raiz de reto_sonnet.' > ~/reto_sonnet/nodo_k47/sector_2b/deposito_3f/x91.dat
+
+PASO 11 - Verificar condiciones sin mostrar la respuesta al otro equipo
+-----------------------------------------------------------------------
+find ~/reto_sonnet -type d
+find ~/reto_sonnet -type f
+find ~/reto_sonnet -type f -name '.*'
+wc -l ~/reto_sonnet/nodo_k47/sector_2b/archivo_64/modulo_9c/registro_64.dat
+cat ~/reto_sonnet/INICIO.txt
+ls -la ~/reto_sonnet/nodo_k47
+ls -la ~/reto_sonnet/nodo_k47/sector_2b/archivo_64
+ls -la ~/reto_sonnet/nodo_k47/sector_2b/archivo_64/modulo_9c
+
+PASO 12 - Validacion privada del equipo creador
+-----------------------------------------------
+Comprueba que existe la cadena:
+INICIO.txt -> .r8m2 -> m41.dat -> .q26 -> registro_64.dat -> x91.dat
+Hay al menos 4 pistas encadenadas, 2 ocultas, 2 distractores, 4 niveles,
+un archivo largo con la instruccion al final y un tesoro con palabra clave.
+NO crees resuelto.txt en tu propio reto: debe crearlo el equipo visitante.
+
+PASO 13 - Intercambio pendiente
+------------------------------
+Espera la asignacion del facilitador. En el reto ajeno, el equipo visitante
+creara resuelto.txt con su nombre y la clave encontrada. Al volver,
+comprueba tu reto con:
+ls -la ~/reto_sonnet
+cat ~/reto_sonnet/resuelto.txt
+Si todavia no existe, significa que aun no hay entrega registrada.
+
+ADVERTENCIA
+-----------
+El reto tiene nombres opacos y pistas que pueden desviar, pero debe seguir
+siendo resoluble con comandos basicos. No ocultes ni borres INICIO.txt.
+No compartas la ruta del tesoro ni la clave con otros equipos.

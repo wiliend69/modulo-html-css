@@ -1,0 +1,220 @@
+GUIA 1 - MISIONES 1 A 5 - NOVATECH (UBUNTU BASH)
+===================================================
+IMPORTANTE: Esta guia parte del ZIP ORIGINAL SIN RESOLVER. No ejecutes completar_mision.sh.
+Ejecuta CADA comando por separado y en el orden indicado. No pegues titulos ni explicaciones.
+Antes de cada mv o rm, el auditor debe solicitar pwd y ls -la (incluidos abajo).
+Los comandos echo >> agregan a la bitacora; no uses > sobre bitacora.txt.
+Equipo indicado en el ZIP: Sonnet; integrantes: Danilo Tangarife, Wilmer Camargo y Emanuel Silva.
+Si no son los integrantes reales, reemplaza esos nombres ANTES de escribir la primera linea.
+
+PREPARACION - UNA SOLA VEZ
+-------------------------
+1. Descarga mision_novatech.zip y ubicalo en ~/Downloads.
+2. Abre Terminal Ubuntu. Comprueba tu carpeta personal:
+pwd
+3. Comprueba el ZIP:
+ls -lh ~/Downloads/mision_novatech.zip
+4. Descomprime desde terminal a una carpeta temporal:
+mkdir -p ~/novatech_material
+unzip -n ~/Downloads/mision_novatech.zip -d ~/novatech_material
+5. Revisa el material:
+ls -la ~/novatech_material
+6. Lleva los dos scripts oficiales a tu carpeta personal:
+pwd
+ls -la ~/novatech_material
+mv ~/novatech_material/preparar_mision.sh ~/novatech_material/verificar.sh ~/
+7. Si YA existe ~/novatech, no vuelvas a preparar el escenario; consulta al facilitador:
+ls -ld ~/novatech 2>/dev/null || echo 'Todavia no existe novatech'
+8. Si NO existe ~/novatech, prepara el escenario oficial:
+cd ~
+bash ~/preparar_mision.sh
+9. Confirma:
+ls -la ~/novatech
+NOTA: Si ya habias extraido o preparado el escenario, evita crear una segunda copia.
+
+MISION 1 - RECONOCIMIENTO
+------------------------
+1. Entra al escenario y lee instrucciones:
+cd ~/novatech
+pwd
+ls -la
+cat LEEME.txt
+2. Revisa las carpetas inmediatas:
+find . -mindepth 1 -maxdepth 1 -type d
+find . -mindepth 1 -maxdepth 1 -type d | wc -l
+3. Examina el servidor y cuenta los temporales:
+ls -la servidor_viejo
+find servidor_viejo -maxdepth 1 -type f -name '*.tmp' | wc -l
+4. Lee las notas del desarrollador:
+cat servidor_viejo/notas_dev.txt
+5. Crea la bitacora SOLO si no existe:
+ls -l bitacora.txt 2>/dev/null || touch bitacora.txt
+6. Escribe la primera linea (cambia integrantes si corresponde):
+echo 'Equipo Sonnet: Danilo Tangarife, Wilmer Camargo, Emanuel Silva' >> bitacora.txt
+7. Anota respuestas usando los resultados reales de los comandos:
+echo "Mision 1 - Ruta absoluta de novatech: $(pwd)" >> bitacora.txt
+echo "Mision 1 - Carpetas directamente dentro de novatech: $(find . -mindepth 1 -maxdepth 1 -type d | wc -l)" >> bitacora.txt
+echo "Mision 1 - Archivos .tmp en servidor_viejo: $(find servidor_viejo -maxdepth 1 -type f -name '*.tmp' | wc -l)" >> bitacora.txt
+echo "Mision 1 - notas_dev.txt dice: $(cat servidor_viejo/notas_dev.txt)" >> bitacora.txt
+8. Presenta la bitacora al facilitador:
+cat bitacora.txt
+9. Rota roles: piloto, navegante, auditor y escriba.
+
+MISION 2 - TRAS LAS PISTAS
+-------------------------
+1. Encuentra el archivo oculto de servidor_viejo:
+cd ~/novatech
+ls servidor_viejo
+ls -la servidor_viejo
+cat servidor_viejo/.pista1.txt
+2. Sigue la indicacion al anio mas reciente:
+ls -la archivo_muerto
+ls -la archivo_muerto/2022
+cat archivo_muerto/2022/.pista2.txt
+3. Comprueba la existencia de pistas que desvian:
+ls -la archivo_muerto/2021
+cat archivo_muerto/2021/.pista_falsa.txt
+4. Inspecciona los mensajes y el mas pesado:
+ls -lhS correo/bandeja
+cat correo/bandeja/mensaje_007.txt
+5. Lee las ultimas lineas del pedido:
+tail -n 15 correo/bandeja/mensaje_007.txt
+6. Registra el descubrimiento y requisitos con tus propias palabras:
+echo 'Mision 2 - Cadena: servidor_viejo/.pista1.txt -> archivo_muerto/2022/.pista2.txt -> correo/bandeja/mensaje_007.txt; en 2021 habia un desvio.' >> bitacora.txt
+echo 'Mision 2 - Cliente: Cafe Montana' >> bitacora.txt
+echo "Mision 2 - Ruta absoluta del pedido: $(pwd)/correo/bandeja/mensaje_007.txt" >> bitacora.txt
+echo 'Mision 2 - Palabra clave: ESPRESSO' >> bitacora.txt
+echo 'Mision 2 - Requisitos: crear cafe-montana, dejar index.html en la raiz; poner contacto, nosotros y una nueva menu.html en pages; estilos en css; JavaScript en js; imagenes en assets/img; audio en assets/audio; documentos PDF en docs; renombrar app_final_v2.js a app.js y banner_FINAL_v3.jpg a banner.jpg; limpiar .tmp y .log; incluir README.md y .gitignore.' >> bitacora.txt
+7. Comprueba y rota roles:
+cat bitacora.txt
+
+MISION 3 - RESPALDO
+-------------------
+1. Confirma origen y destino:
+cd ~/novatech
+pwd
+ls -la
+ls -la servidor_viejo
+2. Copia el servidor completo de forma recursiva (una sola vez):
+cp -r servidor_viejo respaldo_servidor
+3. Comprueba que existe el respaldo y su archivo oculto:
+ls -la respaldo_servidor
+test -f respaldo_servidor/.pista1.txt && echo 'Pista oculta respaldada: OK'
+4. Registra la explicacion del auditor:
+echo 'Mision 3 - Respaldo: cp -r servidor_viejo respaldo_servidor. La opcion -r copia recursivamente carpetas y su contenido; sin -r cp no copia un directorio. El respaldo tambien conserva archivos ocultos como .pista1.txt.' >> bitacora.txt
+5. Revisa bitacora y rota roles:
+cat bitacora.txt
+
+MISION 4 - CONSTRUIR EL PROYECTO
+-------------------------------
+1. Crea la estructura solicitada:
+cd ~/novatech
+mkdir -p cafe-montana/{pages,css,js,assets/img,assets/audio,docs}
+2. Revisa la estructura antes de mover:
+pwd
+ls -la
+find cafe-montana -type d
+ls -la servidor_viejo
+3. Mueve index.html:
+pwd
+ls -la servidor_viejo
+mv servidor_viejo/index.html cafe-montana/
+4. Mueve paginas existentes:
+pwd
+ls -la servidor_viejo
+mv servidor_viejo/contacto.html servidor_viejo/nosotros.html cafe-montana/pages/
+5. Mueve CSS:
+pwd
+ls -la servidor_viejo
+mv servidor_viejo/estilos.css servidor_viejo/reset.css cafe-montana/css/
+6. Renombra el JS principal mientras lo mueves:
+pwd
+ls -la servidor_viejo
+mv servidor_viejo/app_final_v2.js cafe-montana/js/app.js
+7. Mueve el JS restante:
+pwd
+ls -la servidor_viejo
+mv servidor_viejo/carrito.js cafe-montana/js/
+8. Mueve imagenes y renombra el banner:
+pwd
+ls -la servidor_viejo
+mv servidor_viejo/logo.png servidor_viejo/producto1.jpg servidor_viejo/producto2.jpg cafe-montana/assets/img/
+pwd
+ls -la servidor_viejo
+mv servidor_viejo/banner_FINAL_v3.jpg cafe-montana/assets/img/banner.jpg
+9. Mueve audio y PDF:
+pwd
+ls -la servidor_viejo
+mv servidor_viejo/jingle.mp3 cafe-montana/assets/audio/
+pwd
+ls -la servidor_viejo
+mv servidor_viejo/manual.pdf servidor_viejo/contrato.pdf cafe-montana/docs/
+10. Crea la pagina nueva con echo:
+echo '<html><body><h1>Menu - Cafe Montana</h1></body></html>' > cafe-montana/pages/menu.html
+11. Revisa CADA carpeta como exige la guia:
+ls -la cafe-montana
+ls -la cafe-montana/pages
+ls -la cafe-montana/css
+ls -la cafe-montana/js
+ls -la cafe-montana/assets
+ls -la cafe-montana/assets/img
+ls -la cafe-montana/assets/audio
+ls -la cafe-montana/docs
+12. Rota roles.
+
+MISION 5 - LIMPIEZA Y ENTREGA
+-----------------------------
+1. Revisa el estado del servidor antes de borrar:
+cd ~/novatech
+pwd
+ls -la servidor_viejo
+find servidor_viejo -type f
+2. Elimina temporales y logs (auditor verifica antes):
+pwd
+ls -la servidor_viejo
+rm servidor_viejo/*.tmp servidor_viejo/*.log
+3. Elimina copia_vieja (auditor verifica antes):
+pwd
+ls -la servidor_viejo
+ls -la servidor_viejo/copia_vieja
+rm -r servidor_viejo/copia_vieja
+4. Comprueba que solo quedan notas y pistas respaldadas:
+pwd
+ls -la servidor_viejo
+ls -la respaldo_servidor
+5. Como ya estan respaldadas y no son archivos del cliente, elimina servidor_viejo:
+pwd
+ls -la servidor_viejo
+rm -r servidor_viejo
+6. Crea README.md con echo (reemplaza nombres si corresponde):
+echo '# Proyecto Cafe Montana' > cafe-montana/README.md
+echo 'Equipo: Sonnet' >> cafe-montana/README.md
+echo 'Cliente: Cafe Montana' >> cafe-montana/README.md
+echo 'Integrantes:' >> cafe-montana/README.md
+echo '- Danilo Tangarife' >> cafe-montana/README.md
+echo '- Wilmer Camargo' >> cafe-montana/README.md
+echo '- Emanuel Silva' >> cafe-montana/README.md
+7. Crea .gitignore con echo:
+echo '*.tmp' > cafe-montana/.gitignore
+echo '*.log' >> cafe-montana/.gitignore
+8. Registra la entrega:
+echo 'Mision 5 - Archivos temporales y logs eliminados; copia_vieja y servidor_viejo retirados tras revisar respaldo. README.md y .gitignore creados.' >> bitacora.txt
+9. Comprueba README, .gitignore y ausencia de residuos:
+cat cafe-montana/README.md
+cat cafe-montana/.gitignore
+find cafe-montana -type f -name '*.tmp' -o -type f -name '*.log'
+ls -la cafe-montana
+10. Ejecuta el verificador oficial:
+bash ~/verificar.sh
+11. Debe mostrar 14 de 14; si no, revisa la condicion faltante antes de seguir.
+12. Muestra al facilitador el verificador y bitacora completa:
+cat bitacora.txt
+13. Rota roles. Todos deben haber sido pilotos al menos una vez.
+
+NOTAS FINALES
+-------------
+- Estos comandos deben EJECUTARSE realmente; un documento por si solo no es evidencia de ejecucion.
+- No uses el explorador ni editores durante el ejercicio; esta guia es para consultar y copiar comandos.
+- Si el escenario ya esta parcialmente resuelto, no repitas los mv, rm, cp o echo: verifica primero.
+- El ZIP original incluye archivos web vacios: la meta comprobada por verificar.sh es su organizacion.
+- Guarda evidencias reales mostrando la bitacora y el resultado del verificador al facilitador.

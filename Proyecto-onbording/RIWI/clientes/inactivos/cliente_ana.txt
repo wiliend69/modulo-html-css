@@ -1,0 +1,5 @@
+*Nombre: Ana Torres
+*Empresa: Panaderia Aurora
+*Estado: inactivo
+*correo: ana@example.com
+*Observacion: Solicita una pagina web
