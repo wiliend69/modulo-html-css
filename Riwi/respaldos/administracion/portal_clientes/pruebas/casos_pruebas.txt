@@ -1,3 +1,0 @@
-caso 1: app de comida
-caso 2: app tipo cmr
-caso 3: automatizacion 

@@ -1,1 +1,0 @@
-lo que entiendo por ruta absoluta es tomar desde la ruta origen hasta el final para realizar un cambio

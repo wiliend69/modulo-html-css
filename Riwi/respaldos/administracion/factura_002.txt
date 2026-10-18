@@ -1,4 +1,0 @@
-*Numero: 002
-*Cliente: Luis Torres
-*Valor: 150000
-*Estado: Pendiente

@@ -1,2 +1,0 @@
-el simbolo > se utiliza para escribir texto o sobrescribir texto en un archivo
-el simbolo >> se utiliza para escribir al final de un texto
