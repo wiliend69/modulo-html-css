@@ -1,0 +1,14 @@
+URL completa: http://127.0.0.1:5500/index.html
+Protocolo: http
+host:127.0.0.1
+puerto: 5500
+ruta:/index.html
+metodo de la peticion:  GET.
+codigo: 200 OK
+
+
+tabla de rutas
+    <h2><a href="/paginas/tarifa.html">Tarifas</a></h2>
+    <h2><a href="/paginas/reservas.html">Reservas</a></h2>
+    <h2><a href="/paginas/encuentranos.html">Encuentranos</a></h2>
+    <li>  </thead><th scope=  "col"> <a href="/html/index.html">Inicio</a></th></li>

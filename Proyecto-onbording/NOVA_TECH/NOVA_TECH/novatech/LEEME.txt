@@ -1,9 +1,0 @@
-URGENTE - NovaTech
-
-El desarrollador anterior renuncio sin avisar y dejo el servidor hecho un desastre.
-Un cliente espera su sitio web y nadie sabe quien es ni que pidio.
-
-Antes de irse, el desarrollador escondio pistas. La primera esta en servidor_viejo,
-pero no la vas a ver a simple vista.
-
-Lleva todo lo que descubras en un archivo llamado bitacora.txt dentro de novatech.

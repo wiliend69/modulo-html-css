@@ -1,1 +1,0 @@
-PISTA 1: Bienvenido al reto del equipo Sonnet. Entra a la carpeta puerta y busca un archivo oculto (ls -a).
