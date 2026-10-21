@@ -23,15 +23,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configurar Pages
+      - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Subir artefacto (Contenido de parche-dev)
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Al usar './', le decimos a GitHub que tome todo lo que ve 
           # dentro del directorio actual donde está el index.html
-          path: './'
+          path: './index.html'
 
       - name: Desplegar a GitHub Pages
         id: deployment
