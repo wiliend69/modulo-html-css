@@ -79,4 +79,24 @@ El botón “Reserva mi cupo” es type="button" dentro de un <"a">, así que el
 
 Tu nombre · [GitHub](https://github.com/wiliend69)# Parche Dev 2026
 
+## Pantallazos
+- Pantallazo de SEO
+![Captura de pantalla SEO](/img/pantallazos/Lighthouse.png)
+
+- Pantalla de inicio
+![Captura de pantalla inicio](/img/pantallazos/Inicio.png)
+
+- Pantalla de agenda
+![Captura de pantalla inicio](/img/pantallazos/agenda.png)
+
+- Pantalla de formulario
+![Captura de pantalla inicio](/img/pantallazos/formulario.png)
+
+- Pantalla de Modo celular
+![Captura de pantalla inicio](/img/pantallazos/modoCelular.png)
+
+
+
+
+
 
