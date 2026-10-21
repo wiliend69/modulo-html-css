@@ -2,7 +2,7 @@ name: Desplegar subcarpeta a GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Cambia a master si tu rama principal se llama así
+    branches: ["main"] # Cambia a "master" si tu rama principal se llama así
 
 permissions:
   contents: read
@@ -26,11 +26,12 @@ jobs:
       - name: Configurar Pages
         uses: actions/configure-pages@v4
 
-      - name: Subir artefacto (Solo la subcarpeta)
+      - name: Subir artefacto (Contenido de parche-dev)
         uses: actions/upload-pages-artifact@v3
         with:
-          # AQUÍ LE DECIMOS A GITHUB QUÉ CARPETA DESPLEGAR
-          path: './parche-dev'
+          # Al usar './', le decimos a GitHub que tome todo lo que ve 
+          # dentro del directorio actual donde está el index.html
+          path: './'
 
       - name: Desplegar a GitHub Pages
         id: deployment
