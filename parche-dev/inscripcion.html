@@ -13,7 +13,102 @@
         <a href="/conducta.html" aria-current="page">Conducta</a>
     </nav></header>
     <main>
-        
+        <section>
+            <h1>Inscripción</h1>
+            <p>La entrada es gratuita y los cupos son limitados. Completa el formulario para reservar el tuyo.
+            Los campos marcados con * son obligatorios.</p>
+        </section>
+
+        <section>
+            <form action="procesar-inscripcion" method="get" id="form_inscripcion">
+                <fieldset>
+                    <legend>Tus datos</legend>
+                    <p>
+                        <label for="nombre">Nombre completo*</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </p>
+                    <p>
+                        <label for="email"> Correo electronico*</label>
+                        <input type="email" id="email" name="email">
+                    </p>
+                    <p>
+                        <label for="celu">Numero celular (10 dígitos, empieza por 3)</label>
+                        <input type="tel" id="celu" name="celu" pattern="3[0-9]{9}">
+                    </p>
+                    <p>
+                        <label for="ciudad">Ciudad, con estas opciones</label>
+                        <select name=""ciudad id="ciudad">
+                            <option value="medellin">Medellin</option>
+                            <option value="bello">Bello</option>
+                            <option value="itagui">Itagui</option>
+                            <option value="envigado">Envigado</option>
+                            <option value="sabaneta">Sabaneta</option>
+                            <option value="estrella">La estrella</option>
+                            <option value="calda">Calda</option>
+                            <option value="copacabana">Copacabana</option>
+                            <option value="Girardota">Girardota</option>
+                            <option value="barbosa">Barbosa</option>
+                            <option value="otra">Otra</option>
+                        </select>
+                    </p>
+                 <fieldset>
+                <legend>¿En qué momento estás? *</legend>
+    
+                <label>
+                 <input type="radio" name="momento_profesional" value="empezando" required>
+                  Estoy empezando a programar
+                </label><br>
+
+                <label>
+                <input type="radio" name="momento_profesional" value="programo-sin-trabajo">
+                Ya programo, pero no trabajo en tecnología
+                </label><br>
+
+                <label>
+                <input type="radio" name="momento_profesional" value="trabajo-tecnologia">
+                Trabajo en tecnología
+                </label>
+                </fieldset>
+                <fieldset>
+                    <legend>¿Que tema te interesa?</legend>
+                    <label>
+                        <input type="checkbox" name="web" id="web">
+                        Desarrollo web
+                    </label><br>
+                    <label >
+                        <input type="checkbox" name="datos" id="datos">
+                        Datos y SQL
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="acces" id="acces">
+                        Accesibilidad
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="python" id="python">
+                        Python
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="despli" id="despli">
+                        Despliegue en la nube
+                    </label>
+                    
+                </fieldset>
+                <fieldset>
+                    <legend>Agenda</legend>
+                    <label >
+                        <input type="checkbox" name="cupo" id="cupo" >
+                        Quiero inscribirme al taller “Tu primer bot con Python” (30 cupos, trae tu computador)
+                    </label><br>
+                    <label for="talla"> Talla de camiseta: </label>
+                    <select name="talla" id="talla">
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                    </select>
+                </fieldset>
+
+            </form>
+        </section>
     </main>
     <footer><address>
         <p>Para contacto comuniquese a:</p>
