@@ -3,7 +3,7 @@
 Sitio oficial del encuentro Parche Dev 2026, construido solo con HTML semántico.
 Reto individual del Módulo 1 · HTML y CSS, RIWI.
 
-Sitio publicado: https://github.com/wiliend69/trayecto1/tree/main/parche-dev
+Sitio publicado: https://wiliend69.github.io/trayecto1/index.html
 
 ## Páginas
 
