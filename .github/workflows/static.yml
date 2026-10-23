@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # 🎯 SOLUCIÓN CORRECTA: Entra a la subcarpeta remota para desplegarla
-          path: './parche-dev'
+          path: './rueda-libre'
 
       - name: Deploy to GitHub Pages
         id: deployment
