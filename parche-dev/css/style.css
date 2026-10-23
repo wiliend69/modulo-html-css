@@ -147,7 +147,7 @@ ul li {
     font-size: 1.05rem;
 }
 
-/* Viñetas minimalistas personalizadas */
+
 ul li::before {
     content: "→";
     position: absolute;
@@ -197,6 +197,40 @@ main p:last-of-type {
     padding: 20px;
     margin-top: 50px;
     text-align: center;
+}
+section:has(#noAcept) {
+    border-left: 6px solid #cf222e !important;
+    background-color: #fff8f8 !important;
+}
+
+section:has(#noAcept) ul li::before {
+    content: "✕" !important;
+    color: #cf222e !important;
+}
+
+/* Alerta amarilla para: "Cómo reportar" */
+section:has(h2:contains("reportar")) {
+    border-left: 6px solid #ff9900 !important;
+    background-color: #fffdf5 !important;
+}
+
+/* Enlaces de regreso al índice de conducta */
+a[href="#indice"] {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--pd-gris);
+    margin-top: 15px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: var(--color-fondo);
+}
+
+a[href="#indice"]:hover {
+    color: var(--pd-azul);
+    text-decoration: none;
+    background-color: #e1e4e8;
 }
 
 
