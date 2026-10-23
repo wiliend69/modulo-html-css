@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-sistema);
+    background-color: var(--color-fondo);
+    color: var(--color-oscuro);
+    line-height: 1.6;
+    padding: 0 0 60px 0;
+}
+
+/* Eliminar los quiebres de línea rústicos del HTML */
+br {
+    display: none;
+}
+
+/* ==========================================================================
+   3. NAVEGACIÓN Y ENCABEZADO
+   ========================================================================== */
+header {
+    background-color: var(--color-blanco);
+    border-bottom: var(--borde-sutil);
+    padding: 20px;
+    text-align: center;
+}
+
+/* El menú superior horizontal y limpio */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+nav a {
+    color: var(--color-gris-texto);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transicion);
+}
+
+nav a:hover {
+    color: var(--color-principal);
+}
+
+/* Título e introducción del evento */
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--color-oscuro);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: var(--color-gris-texto);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   4. BLOQUES DE INFORMACIÓN CLAVE (Fecha, Hora, Lugar)
+   ========================================================================== */
+/* Buscamos las etiquetas de datos que van antes del botón */
+header p strong, 
+header p + p {
+    margin-top: 15px;
+}
+
+/* Estilo para los datos individuales organizados de forma limpia */
+header h1 ~ p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+/* Resaltar los títulos de los datos (Fecha:, Hora:, etc.) */
+header p:has(strong) {
+    color: var(--color-oscuro);
+}
+
+/* ==========================================================================
+   5. BOTÓN DE ACCIÓN PRINCIPAL (Call To Action)
+   ========================================================================== */
+/* Ajuste para el botón de inscripción gratuita */
+header a[href*="inscripiciones"],
+header a:contains("Reserva"),
+main a:has(button),
+header + a,
+.btn-primary { /* Clase genérica por si la agregas */
+    display: inline-block;
+    background-color: var(--color-oscuro);
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-top: 25px;
+    transition: var(--transicion);
+}
+
+header a:hover {
+    background-color: var(--color-principal);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   6. CONTENEDOR PRINCIPAL Y SECCIONES
+   ========================================================================== */
+main {
+    max-width: 750px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--color-oscuro);
+}
+
+p {
+    color: var(--color-gris-texto);
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   7. LISTAS Y VIÑETAS (Lo que vas a encontrar / Para quién es)
+   ========================================================================== */
+ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: var(--color-gris-texto);
+    font-size: 1.05rem;
+}
+
+/* Viñetas minimalistas personalizadas */
+ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-principal);
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   8. PREGUNTAS FRECUENTES (Estructura Limpia)
+   ========================================================================== */
+/* Cada pregunta y respuesta se organiza de manera clara */
+main h2 ~ p strong,
+main p:has(strong) {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--color-oscuro);
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   9. ENLACES Y MAPA
+   ========================================================================== */
+a {
+    color: var(--color-principal);
+    text-decoration: none;
+    transition: var(--transicion);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para los textos pequeños del mapa o notas al pie */
+main p:contains("Pie del mapa"),
+main p:contains("Mapa de ubicación") {
+    font-size: 0.9rem;
+    color: #8a94a6;
+    font-style: italic;
+    border-left: 3px solid #e1e4e8;
+    padding-left: 10px;
+    margin: 15px 0;
+}
+
+/* ==========================================================================
+   10. FOOTER Y CONTACTO
+   ========================================================================== */
+/* Bloque final de contacto */
+main p:last-of-type {
+    background-color: var(--color-blanco);
+    border: var(--borde-sutil);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   11. ADAPTABILIDAD (Responsive)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    nav {
+        gap: 15px;
+    }
+    
+    main {
+        margin-top: 20px;
+    }
+}
