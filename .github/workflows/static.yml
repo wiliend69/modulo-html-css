@@ -30,7 +30,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # 🎯 SOLUCIÓN CORRECTA: Entra a la subcarpeta remota para desplegarla
+         
           path: './parche-dev'
 
       - name: Deploy to GitHub Pages
