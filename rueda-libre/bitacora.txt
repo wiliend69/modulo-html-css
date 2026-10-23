@@ -8,7 +8,6 @@ codigo: 200 OK
 
 
 tabla de rutas
-    <h2><a href="/paginas/tarifa.html">Tarifas</a></h2>
-    <h2><a href="/paginas/reservas.html">Reservas</a></h2>
-    <h2><a href="/paginas/encuentranos.html">Encuentranos</a></h2>
-    <li>  </thead><th scope=  "col"> <a href="/html/index.html">Inicio</a></th></li>
+    ./html/index.html
+    ./paginas/reservas.html
+    ./paginas/tarifa.html
