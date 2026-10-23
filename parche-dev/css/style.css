@@ -23,7 +23,7 @@ body {
     padding: 0 0 60px 0;
 }
 
-/* Eliminar los quiebres de línea rústicos del HTML */
+
 br {
     display: none;
 }
@@ -35,7 +35,7 @@ header {
     text-align: center;
 }
 
-/* El menú superior horizontal y limpio */
+
 nav {
     display: flex;
     justify-content: center;
@@ -55,7 +55,7 @@ nav a:hover {
     color: var(--color-principal);
 }
 
-/* Título e introducción del evento */
+
 header h1 {
     font-size: 2.8rem;
     font-weight: 800;
