@@ -2,8 +2,7 @@ name: Deploy static content to Pages
 on:
   push:
     branches: ["main"]
-    paths:
-      - 'parche-dev/**'
+   
   workflow_dispatch:
   
 
