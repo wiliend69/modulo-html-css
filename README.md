@@ -24,7 +24,11 @@
 
 ```text
 trayecto1/
-├── rueda-libre/            # Directorio del proyecto web
-│   ├── index.html          # Estructura principal y formulario validado
-│   └── bitacora.md         # Bitácora de pruebas, accesibilidad y colores
+├── IA Generativa           # carpeta de IA Generativa
+├── Parche-Dev              # Carpeta de parche-dev
+│   ├── css/
+│   ├── img/           
+├── rueda-libre/            # Directorio del Rueda-libre
+│   ├── index.html          
+│   └── bitacora.md                        
 └── README.md               # Documentación general del repositorio
